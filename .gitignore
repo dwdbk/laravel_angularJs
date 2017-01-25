@@ -13,3 +13,8 @@ bootstrap/cache/
 
 # Rocketeer PHP task runner and deployment package. https://github.com/rocketeers/rocketeer
 .rocketeer/
+.idea/blade.xml
+.idea/markdown-navigator.xml
+.idea/workspace.xml
+.idea/inspectionProfiles/
+public/bower_components/

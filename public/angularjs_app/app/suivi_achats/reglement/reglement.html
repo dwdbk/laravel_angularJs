@@ -1,0 +1,83 @@
+<!-- page heading debut-->
+<div class="page-heading">
+	<ul class="breadcrumb">
+		<li href="#/achats"><a >Suivi Achats</a></li>
+		<li class="active"><a href="/reglement"></a>Réglement </li>
+	</ul>
+</div>
+<!-- page heading end-->
+<div class="row">
+	<div class="col-md-4">
+		<button type="button" class="btn btn-danger">
+			<span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Supprimer
+		</button>
+	</div>
+	<div class="col-md-4">
+		<button type="button" class="btn btn-default" data-toggle="modal" data-target="#nouveauModal">
+			<span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Nouveau réglement
+		</button>
+	</div>
+	<div class="col-md-4">
+		<button type="button" class="btn btn-info" data-toggle="modal" data-target="#rechercheModal">
+			<span class="glyphicon glyphicon-search" aria-hidden="true"></span> Rechercher
+		</button>
+	</div>
+</div>
+<br />
+<table class="table table-bordered table-striped table-hover table-condensed">
+	<tr>
+		<th><input type="checkbox"></th>
+		<th>Référence</th>
+		<th>Date de réglement</th>
+		<th>Montant</th>
+		<th>Détails</th>
+		<th>Modifier</th>
+		<th>Supprimer</th>
+	</tr>
+    <tr ng-repeat="reglement in reglements">
+		<td>
+			<input type="checkbox">
+		</td>
+		<td>{{reglement.reference}}</td>
+		<td>{{reglement.reglementDate | date:'dd-MM-yyyy'}}</td>
+		<td>{{reglement.montant}}</td>
+		<td>
+			<button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#detailsModal">
+			  <span class="glyphicon glyphicon-modal-window" aria-hidden="true"></span>
+			</button>
+		</td>
+		<td>
+			<button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#modificationModal">
+			  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+			</button>
+		</td>
+		<td>
+			<button type="button" class="btn btn-default btn-xs">
+			  <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+			</button>
+		</td>
+
+	</tr>
+
+</table>
+
+<nav>
+  <ul class="pagination">
+    <li>
+      <a href="#/reglement" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li><a href="#/reglement">1</a></li>
+    <li><a href="#/reglement">2</a></li>
+    <li>
+      <a href="#/reglement" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+<div ng:include="'app/suivi_achats/reglement/reglement_nouveau.html'"></div>
+<div ng:include="'app/suivi_achats/reglement/reglement_modification.html'"></div>
+<div ng:include="'app/suivi_achats/reglement/reglement_recherche.html'"></div>
+<div ng:include="'app/suivi_achats/reglement/reglement_details.html'"></div>

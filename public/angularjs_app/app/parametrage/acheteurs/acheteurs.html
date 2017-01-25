@@ -1,0 +1,83 @@
+<!-- page heading debut-->
+<div class="page-heading">
+	<ul class="breadcrumb">
+		<li><a >Paramétrage</a></li>
+		<li class="active"> Acheteurs </li>
+	</ul>
+</div>
+<!-- page heading end-->
+<div class="row">
+  <div class="col-md-4">
+		<button type="button" class="btn btn-danger" ng-click="deleteAcheteur(achteur.achteurId)">
+			<span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Supprimer
+		</button>
+  </div>
+  <div class="col-md-4">
+		<button type="button" class="btn btn-default" ng-click="newAcheteur()" data-toggle="modal" data-target="#nouveauModal">
+			<span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Nouveau Acheteur
+		</button>
+  </div>
+  <div class="col-md-4">
+		<button type="button" class="btn btn-info" ng-click="findAcheteur()" data-toggle="modal" data-target="#rechercheModal">
+			<span class="glyphicon glyphicon-search" aria-hidden="true"></span> Rechercher
+		</button>
+  </div>
+</div>
+<br />
+<table class="table table-bordered table-striped table-hover table-condensed">
+	<tr>
+		<th><input type="checkbox"></th>
+		<td>Id acheteur</td>
+		<th>Nom</th>
+		<th>Tel</th>
+		<th>Email</th>
+		<th>Détails</th>
+		<th>Modifier</th>
+		<th>Supprimer</th>
+	</tr>
+	<tr ng-repeat="achet in acheteurs">
+		<td><input type="checkbox"></td>
+		<td>{{achet.acheteurId}}</td>
+		<td>{{achet.lastname}}</td>
+		<td>{{achet.phone}}</td>
+		<td>{{achet.email}}</td>
+		<td>
+			<button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#detailsModal">
+			  <span class="glyphicon glyphicon-modal-window" aria-hidden="true"></span>
+			</button>
+		</td>
+		<td>
+			<button type="button" class="btn btn-default btn-xs" ng-click="editAcheteur()"data-toggle="modal" data-target="#modificationModal">
+			  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+			</button>
+		</td>
+		<td>
+			<button type="button" class="btn btn-default btn-xs" ng-click="deleteAcheteur()" >
+			  <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+			</button>
+		</td>
+	</tr>
+</table>
+  <ul class="pagination">
+    <li>
+      <a href="#/acheteurs" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li><a href="#/acheteurs">1</a></li>
+    <li><a href="#/acheteurs">2</a></li>
+    <li><a href="#/acheteurs">3</a></li>
+    <li><a href="#/acheteurs">4</a></li>
+    <li><a href="#/acheteurs">5</a></li>
+    <li>
+      <a href="#/acheteurs" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<div ng:include="'app/parametrage/acheteurs/acheteurs_nouveau.html'"></div>
+<div ng:include="'app/parametrage/acheteurs/acheteurs_modification.html'"></div>
+<div ng:include="'app/parametrage/acheteurs/acheteurs_recherche.html'"></div>
+<div ng:include="'app/parametrage/acheteurs/acheteurs_details.html'"></div>

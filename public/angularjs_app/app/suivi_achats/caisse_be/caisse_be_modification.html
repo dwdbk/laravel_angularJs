@@ -1,0 +1,161 @@
+<!-- Modal -->
+<div class="modal fade" id="modificationModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+	<div class="modal-dialog modal-lg">
+		<div class="modal-content">
+			<div class="modal-header">
+				<button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+				<h4 class="modal-title" id="myModalLabel">Modifier be caisse</h4>
+			</div>
+			<div class="modal-body">
+				<form class="form-horizontal">
+					<div class="col-sm-12 well">
+						<div class="form-group col-sm-6">
+							<label class="col-sm-4 control-label">Opérateur</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control" disabled="disabled" value="AN">
+							</div>
+						</div>
+						<div class="form-group col-sm-6">
+							<label class="col-sm-4 control-label">Date BE</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control">
+							</div>
+						</div>
+						<div class="form-group col-sm-6">
+							<label class="col-sm-4 control-label">Num BE</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control">
+							</div>
+						</div>
+						<div class="form-group col-sm-6">
+							<label class="col-sm-4 control-label">Destinatire</label>
+							<div class="col-sm-8">
+								<select class="form-control" ng-model="destinataire" ng-options="destinataire.nom for destinataire in destinataires">
+								</select>
+							</div>
+						</div>
+						<div class="form-group col-sm-6">
+							<label class="col-sm-4 control-label">Date début</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control">
+							</div>
+						</div>
+						<div class="form-group col-sm-6">
+							<label class="col-sm-4 control-label">Date fin</label>
+							<div class="col-sm-8">
+								<input type="text" class="form-control">
+							</div>
+						</div>
+					</div>
+					<div class="col-sm-12">
+						<ul class="nav nav-tabs" id="mytab">
+							<li role="presentation" class="active"><a href="#liste" id="a_liste" >Factures</a></li>
+							<li role="presentation"><a href="#recherche" id="a_recherche" >Recherche</a></li>
+						</ul>
+						<div class="col-sm-12 tab-content">
+							<div class="col-sm-12 tab-pane active" id="liste">
+								<div class="form-group col-sm-12" style="max-height: 280px; overflow: auto;">
+									<table class="table table-bordered table-striped table-hover table-condensed">
+										<tr>
+											<th>N° Facture</th>
+											<th>Date Facture</th>
+											<th>Ordonnateur</th>
+											<th>Réference</th>
+											<th>Beneficiaire</th>
+											<th>Montant</th>
+											<th>Observation</th>
+											<th>BE</th>
+											<th>Operateur</th>
+											<th>Destinataire</th>
+											<th></th>
+										</tr>
+										<tr ng-repeat="achat in achats">
+											<td>
+												<input type="checkbox">
+											</td>
+											<td>4587</td>
+											<td>12/45/2015</td>
+											<td>HGD</td>
+											<td>JJ</td>
+											<td>II</td>
+											<td>1542.12</td>
+											<td>observ</td>
+											<td>BE</td>
+											<td>AZE</td>
+											<td>SDQ</th>
+											<td>
+												<button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#detailsModal">
+													<span class="glyphicon glyphicon-modal-window" aria-hidden="true"></span>
+												</button>
+											</td>
+										</tr>
+									</table>
+								</div>
+							</div>
+							<div class="col-sm-12 tab-pane" id="recherche">
+								<br />
+								<div class="form-group col-sm-6">
+									<label class="col-sm-4 control-label">Du</label>
+									<div class="col-sm-8">
+										<input type="text" class="form-control">
+									</div>
+								</div>
+								<div class="form-group col-sm-6">
+									<label class="col-sm-4 control-label">Au</label>
+									<div class="col-sm-8">
+										<input type="text" class="form-control">
+									</div>
+								</div>
+								<div class="form-group col-sm-12" style="max-height: 280px; overflow: auto;">
+									<table class="table table-bordered table-striped table-hover table-condensed">
+										<tr>
+											<th><input type="checkbox"></th>
+											<th>N° Facture</th>
+											<th>Date Facture</th>
+											<th>Ordonnateur</th>
+											<th>Réference</th>
+											<th>Beneficiaire</th>
+											<th>Montant</th>
+											<th>Observation</th>
+											<th>BE</th>
+											<th>Operateur</th>
+											<th>Destinataire</th>
+											<th></th>
+										</tr>
+										<tr ng-repeat="achat in achatsRecherche">
+											<td>
+												<input type="checkbox">
+											</td>
+											<td>4587</td>
+											<td>12/45/2015</td>
+											<td>HGD</td>
+											<td>JJ</td>
+											<td>II</td>
+											<td>1542.12</td>
+											<td>observ</td>
+											<td>BE</td>
+											<td>AZE</td>
+											<td>SDQ</th>
+											<td>
+												<button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#detailsModal">
+													<span class="glyphicon glyphicon-modal-window" aria-hidden="true"></span>
+												</button>
+											</td>
+										</tr>
+									</table>
+								</div>
+							</div>
+						</div>
+					</div>
+				</form>
+
+			</div>
+			<div class="modal-footer">
+				<div class="col-md-6 col-md-offset-6">
+					<button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+					<button type="button" class="btn btn-primary">Enregistrer</button>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

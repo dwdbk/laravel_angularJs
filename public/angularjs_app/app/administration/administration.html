@@ -1,0 +1,67 @@
+<!-- page heading debut-->
+<div class="page-heading">
+	<ul class="breadcrumb">
+		<li><a >Administration</a></li>
+	</ul>
+</div>
+<div class="page">
+	<div class="row">
+		<div class="col-lg-4">
+			<div class="bs-component">
+				<div class="list-group">
+					<a class="list-group-item" href="#/fournisseurs"><i class="fa fa-street-view"></i>  Fournisseurs </a>
+					<a class="list-group-item" href="#/ordonnateurs"><i class="fa fa-user"></i> Ordonnateurs</a>
+					<a class="list-group-item" href="#/utilisateurs"><i class="fa fa-group"></i> Utilisateurs </a>
+					<a class="list-group-item" href="#/acheteurs">Acheteurs</a>
+					<a class="list-group-item" href="#/mode_paiement">Mode paiement</a>
+					<a class="list-group-item" href="#/parametrages">Paramétrage</a>
+					<a class="list-group-item" href="#/impayes">Impayés</a>
+				</div>
+			</div>
+		</div>
+		<div class="col-lg-8">
+			<table class="table table-bordered table-striped table-hover table-condensed">
+				<thead>
+				<tr>
+					<th width="100px">Plus d&#146;infos</th>
+					<th>Objet</th>
+					<th>Action</th>
+					<th>Date d'op&eacute;ration</th>
+					<th>Utilisateur</th>
+				</tr>
+				</thead>
+				<tbody>
+				<tr ng-repeat-start="trace in traces">
+					<td align="center" ng-click="trace.show=!trace.show">
+						<span class="glyphicon glyphicon-minus" ng-show="trace.show" ></span>
+						<span class="glyphicon glyphicon-plus" ng-hide="trace.show"></span>
+					</td>
+					<td class="truncate">{{trace.rubrique}}</td>
+					<td>{{trace.action}}</td>
+					<td>{{trace.addDate | date:"dd/MM/yyyy &agrave; HH'h':mm'min'"}}</td>
+					<td>{{trace.user}}</td>
+				</tr>
+				<tr ng-repeat-end ng-show="trace.show">
+					<td></td>
+					<td colspan="4">
+						<table class="table">
+							<thead>
+							<th >Param&egrave;tre</th>
+							<th  width="300px">Valeur initiale</th>
+							<th  width="300px">Nouvelle valeur</th>
+							</thead>
+							<tbody>
+							<tr ng-repeat="parm in parametres">
+								<td>{{parm.parametre}}</td>
+								<td>{{parm.newValue}}</td>
+								<td>{{parm.oldValue}}</td>
+							</tr>
+							</tbody>
+						</table>
+					</td>
+				</tr>
+				</tbody>
+			</table>
+		</div>
+	</div>
+</div>

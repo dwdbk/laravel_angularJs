@@ -1,0 +1,87 @@
+<!-- page heading debut-->
+<div class="page-heading">
+	<ul class="breadcrumb">
+		<li><a >Paramétrage</a></li>
+		<li class="active"> Ordonnateur </li>
+	</ul>
+</div>
+<!-- page heading end-->
+<div class="row">
+	<div class="panel">
+  <div class="col-md-4">
+		<button type="button" class="btn btn-danger">
+			<span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Supprimer
+		</button>
+  </div>
+  <div class="col-md-4">
+		<button type="button" class="btn btn-default" data-toggle="modal" data-target="#nouveauModal">
+			<span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Nouveau Ordonnateur
+		</button>
+  </div>
+  <div class="col-md-4">
+		<button type="button" class="btn btn-info" data-toggle="modal" data-target="#rechercheModal">
+			<span class="glyphicon glyphicon-search" aria-hidden="true"></span> Rechercher
+		</button>
+  </div>
+	</div>
+</div>
+<br />
+<table class="table table-bordered table-striped table-hover table-condensed">
+	<tr>
+		<th><input type="checkbox"></th>
+		<th>Ordonnateur</th>
+		<th>Tel</th>
+		<th>Email</th>
+		<th>Détails</th>
+		<th>Modifier</th>
+		<th>Supprimer</th>
+	</tr>
+    <tr ng-repeat="ordonnat in ordonnateurs">
+		<td>
+			<input type="checkbox">
+		</td>
+		<td>{{ordonnat.ordonnateur}}</td>
+		<td>{{ordonnat.tel}}</td>
+		<td>{{ordonnat.email}}</td>
+		<td>
+			<button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#detailsModal">
+			  <span class="glyphicon glyphicon-modal-window" aria-hidden="true"></span>
+			</button>
+		</td>
+		<td>
+			<button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#modificationModal">
+			  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+			</button>
+		</td>
+		<td>
+			<button type="button" class="btn btn-default btn-xs">
+			  <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+			</button>
+		</td>
+	</tr>
+</table>
+
+<nav>
+  <ul class="pagination">
+    <li>
+      <a href="#/ordonnateurs" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li><a href="#/ordonnateurs">1</a></li>
+    <li><a href="#/ordonnateurs">2</a></li>
+    <li><a href="#/ordonnateurs">3</a></li>
+    <li><a href="#/ordonnateurs">4</a></li>
+    <li><a href="#/ordonnateurs">5</a></li>
+    <li>
+      <a href="#/ordonnateurs" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<div ng:include="'app/parametrage/ordonnateurs/ordonnateur_nouveau.html'"></div>
+<div ng:include="'app/parametrage/ordonnateurs/ordonnateur_modification.html'"></div>
+<div ng:include="'app/parametrage/ordonnateurs/ordonnateur_recherche.html'"></div>
+<div ng:include="'app/parametrage/ordonnateurs/ordonnateur_details.html'"></div>

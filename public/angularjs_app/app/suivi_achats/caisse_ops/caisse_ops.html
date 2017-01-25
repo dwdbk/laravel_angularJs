@@ -1,0 +1,94 @@
+<!-- page heading debut-->
+<div class="page-heading">
+	<ul class="breadcrumb">
+		<li>
+			<a >Suivi Achats</a>
+		</li>
+		<li class="active"> OBS Caisee </li>
+	</ul>
+</div>
+<!-- page heading end-->
+
+<div class="row">
+  <div class="col-md-4">
+		<button type="button" class="btn btn-danger">
+			<span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Supprimer
+		</button>
+  </div>
+  <div class="col-md-4">
+		<button type="button" class="btn btn-default" data-toggle="modal" data-target="#nouveauModal">
+			<span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Nouveau OPS de caisse
+		</button>
+  </div>
+  <div class="col-md-4">
+		<button type="button" class="btn btn-info" data-toggle="modal" data-target="#rechercheModal">
+			<span class="glyphicon glyphicon-search" aria-hidden="true"></span> Rechercher
+		</button>
+  </div>
+</div>
+<br />
+<table class="table table-bordered table-striped table-hover table-condensed">
+	<tr>
+		<th><input type="checkbox"></th>
+		<th>N° BE</th>
+		<th>Date</th>
+		<th>Ordonnateur</th>
+		<th>Reference</th>
+		<th>Beneficiaire</th>
+		<th>Montant</th>
+		<th>Détails</th>
+		<th>Modifier</th>
+		<th>Supprimer</th>
+	</tr>
+    <tr ng-repeat="caisse in caisse_ops">
+		<td>
+			<input type="checkbox">
+		</td>
+		<td>{{caisse.idCaisse_ops}}</td>
+		<td>{{caisse.date | date:'dd-MM-yyyy'}}</td>
+		<td>{{caisse.ordonnateur}}</td>
+		<td>{{caisse.reference}}</td>
+		<td>{{caisse.beneficiaire}}</td>
+		<td>{{caisse.montant}}</td>
+		<td>
+			<button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#detailsModal">
+			  <span class="glyphicon glyphicon-modal-window" aria-hidden="true"></span>
+			</button>
+		</td>
+		<td>
+			<button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#modificationModal">
+			  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+			</button>
+		</td>
+		<td>
+			<button type="button" class="btn btn-default btn-xs">
+			  <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+			</button>
+		</td>
+	</tr>
+</table>
+
+<nav>
+  <ul class="pagination">
+    <li>
+      <a href="#/caisse_ops" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li><a href="#/caisse_ops">1</a></li>
+    <li><a href="#/caisse_ops">2</a></li>
+    <li><a href="#/caisse_ops">3</a></li>
+    <li><a href="#/caisse_ops">4</a></li>
+    <li><a href="#/caisse_ops">5</a></li>
+    <li>
+      <a href="#/caisse_ops" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<div ng:include="'app/suivi_achats/caisse_ops/caisse_ops_nouveau.html'"></div>
+<div ng:include="'app/suivi_achats/caisse_ops/caisse_ops_modification.html'"></div>
+<div ng:include="'app/suivi_achats/caisse_ops/caisse_ops_recherche.html'"></div>
+<div ng:include="'app/suivi_achats/caisse_ops/caisse_ops_details.html'"></div>

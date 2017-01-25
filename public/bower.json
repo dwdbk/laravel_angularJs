@@ -1,0 +1,45 @@
+{
+  "name": "laravel_angularjs",
+  "homepage": "https://github.com/dwdbk/laravel_angularJs",
+  "authors": [
+    "daoud.ballouk@gmail.com"
+  ],
+  "description": "project LARAVEL & ANGULAR JS",
+  "main": "",
+  "keywords": [
+    "laravel",
+    "angularjs"
+  ],
+  "license": "MIT",
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.6.1",
+    "angular-resource": "^1.6.1",
+    "angular-cookies": "^1.6.1",
+    "angular-route": "^1.6.1",
+    "angular-sanitize": "^1.6.1",
+    "angular-mocks": "^1.6.1",
+    "angular-animate": "^1.6.1",
+    "angular-ui-router": "^0.4.2",
+    "angular-moment": "^1.0.1",
+    "angular-underscore-module": "^1.0.3",
+    "angular-chosen-localytics": "^1.5.1",
+    "underscore": "^1.8.3",
+    "chosen": "^1.6.2",
+    "angular-translate": "^2.13.1",
+    "moment-timezone": "^0.5.11",
+    "jquery": "^3.1.1",
+    "angular-datatables": "^2.0.1",
+    "angular-local-storage": "^0.5.2",
+    "angular-material": "^1.1.1",
+    "angular-messages": "^1.6.1",
+    "angular-aria": "^1.6.1"
+  }
+}

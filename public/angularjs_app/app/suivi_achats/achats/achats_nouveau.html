@@ -1,0 +1,139 @@
+<!-- Modal -->
+<div class="modal fade" id="nouveauModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
+  <div class="modal-dialog modal-lg">
+    <div class="modal-content">
+      <div class="modal-header">
+          <div class="row">
+              <div class="col-lg-12">
+                  <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                  <h4 class="modal-title" id="myModalLabel">Nouvel achat</h4>
+              </div>
+          </div>
+
+      </div>
+      <div class="modal-body">
+          <div class="row">
+              <div class="col-lg-12">
+                  <form class="form-horizontal">
+                      <div class="form-group col-sm-6">
+                          <label class="col-sm-4 control-label">Opérateur</label>
+                          <div class="col-sm-8">
+                              <input type="text" class="form-control" disabled="disabled" value="AN">
+                          </div>
+                      </div>
+                      <div class="form-group col-sm-6">
+                          <label class="col-sm-4 control-label">Cpt. achat</label>
+                          <div class="col-sm-8">
+                              <input type="text" class="form-control" disabled="disabled" value="12">
+                          </div>
+                      </div>
+                      <div class="form-group col-sm-6">
+                          <label class="col-sm-4 control-label">Acheteur</label>
+                          <div class="col-sm-8">
+                              <select class="form-control" ng-model="acheteur" ng-options="acheteur.nom for acheteur in acheteurs">
+                              </select>
+                          </div>
+                      </div>
+                      <div class="form-group col-sm-6">
+                          <label class="col-sm-4 control-label">Ordonnateur</label>
+                          <div class="col-sm-8">
+                              <select class="form-control" ng-model="ordonateur" ng-options="ordonateur.nom for ordonateur in ordonateurs">
+                              </select>
+                          </div>
+                      </div>
+                      <div class="form-group col-sm-6">
+                          <label class="col-sm-4 control-label">N° Facture</label>
+                          <div class="col-sm-8">
+                              <input type="text" class="form-control">
+                          </div>
+                      </div>
+                      <div class="form-group col-sm-6">
+                          <label class="col-sm-4 control-label">Date facture</label>
+                          <div class="col-sm-8">
+                              <input type="text" class="form-control">
+                          </div>
+                      </div>
+                      <div class="form-group col-sm-6">
+                          <label class="col-sm-4 control-label">Fournisseur</label>
+                          <div class="col-sm-8">
+                              <div class="input-group">
+                                  <select class="form-control" ng-model="fournisseur" ng-options="fournisseur.nom for fournisseur in fournisseurs">
+                                  </select>
+                                  <span class="input-group-btn">
+                                    <button class="btn btn-default" type="button" data-toggle="modal" data-target="#nouveauFModal">
+                                        <span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span>
+                                    </button>
+                                  </span>
+                              </div>
+                          </div>
+                      </div>
+                      <div class="form-group col-sm-6">
+                          <label class="col-sm-4 control-label">Objet</label>
+                          <div class="col-sm-8">
+                              <textarea class="form-control" rows="3"></textarea>
+                          </div>
+                      </div>
+                      <div class="form-group col-sm-6">
+                          <label class="col-sm-4 control-label">Montant</label>
+                          <div class="col-sm-8">
+                              <input type="text" class="form-control">
+                          </div>
+                      </div>
+                      <div class="form-group col-sm-6">
+                          <label class="col-sm-4 control-label">Mode paiement</label>
+                          <div class="col-sm-8">
+                              <select class="form-control" ng-model="modesPaiement" ng-options="modesPaiement.nom for modesPaiement in modesPaiements">
+                              </select>
+                          </div>
+                      </div>
+                      <div class="form-group col-sm-6">
+                          <label class="col-sm-4 control-label">Destinataire</label>
+                          <div class="col-sm-8">
+                              <input type="text" class="form-control">
+                          </div>
+                      </div>
+                      <div class="col-sm-6">
+                          <div class="form-group col-sm-12">
+                              <label class="col-sm-4 control-label">Date d'exp.</label>
+                              <div class="col-sm-8">
+                                  <input type="text" class="form-control">
+                              </div>
+                          </div>
+                      </div>
+                      <div class="form-group col-sm-6">
+                          <label class="col-sm-4 control-label">Montant Total</label>
+                          <div class="col-sm-8">
+                              <input type="text" class="form-control">
+                          </div>
+                      </div>
+                      <div class="form-group col-sm-6">
+                          <label class="col-sm-4 control-label">Montant réglé</label>
+                          <div class="col-sm-8">
+                              <input type="text" class="form-control">
+                          </div>
+                      </div>
+                      <div class="col-sm-6">
+                          <div class="form-group col-sm-12">
+                              <label class="col-sm-4 control-label">Expédition</label>
+                              <div class="col-sm-8">
+                                  <input type="text" class="form-control">
+                              </div>
+                          </div>
+                      </div>
+                      <div class="col-sm-6">
+                          <label class="col-sm-4 control-label">Observation</label>
+                          <div class="col-sm-8">
+                              <textarea class="form-control" rows="2"></textarea>
+                          </div>
+                      </div>
+                  </form>
+              </div>
+          </div>
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-default" data-dismiss="modal">Annuler</button>
+        <button type="button" class="btn btn-primary">Enregistrer</button>
+      </div>
+    </div>
+  </div>
+</div>

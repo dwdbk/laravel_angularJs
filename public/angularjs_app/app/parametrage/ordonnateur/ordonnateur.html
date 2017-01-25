@@ -1,0 +1,101 @@
+<!-- page heading debut-->
+<div class="page-heading">
+	<ul class="breadcrumb">
+		<li><a >Paramétrage</a></li>
+		<li class="active"> Ordonnateurs </li>
+	</ul>
+</div>
+<!-- page heading end-->
+<div class="row">
+	<div class="panel">
+		<div class="row">
+			<div class="col-md-3">
+				<button type="button" class="btn btn-default" data-toggle="modal" data-target="#nouveauModal">
+					<span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Nouveau Ordonnateur
+				</button>
+			</div>
+			<div class="col-md-5 col-lg-offset-1">
+				<span>
+					<button type="button" class="btn btn-info" data-toggle="modal" data-target="#rechercheModal">
+						<span class="glyphicon glyphicon-search" aria-hidden="true"></span> Rechercher
+					</button>
+				</span>
+				<span>
+					<button type="button" class="btn btn-danger">
+						<span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Supprimer
+					</button>
+				</span>
+				<span>
+					<button type="button" class="btn btn-success" >
+						<span class="glyphicon glyphicon-export" aria-hidden="true"></span> Exporter
+					</button>
+				</span>
+				<span>
+					<button type="button" class="btn btn-success">
+						<span class="glyphicon glyphicon-print" aria-hidden="true"></span> Imprimer
+					</button>
+				</span>
+			</div>
+		</div>
+	</div>
+</div>
+<br />
+<table class="table table-bordered table-striped table-hover table-condensed">
+	<tr>
+		<th><input type="checkbox"></th>
+		<th>Ordonnateur</th>
+		<th>Tel</th>
+		<th>Email</th>
+		<th>Détails</th>
+		<th>Modifier</th>
+		<th>Supprimer</th>
+	</tr>
+    <tr ng-repeat="ordonnat in ordonnateur">
+		<td>
+			<input type="checkbox">
+		</td>
+		<td>{{ordonnat.ordonnateur}}</td>
+		<td>{{ordonnat.tel}}</td>
+		<td>{{ordonnat.email}}</td>
+		<td>
+			<button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#detailsModal">
+			  <span class="glyphicon glyphicon-modal-window" aria-hidden="true"></span>
+			</button>
+		</td>
+		<td>
+			<button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#modificationModal">
+			  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+			</button>
+		</td>
+		<td>
+			<button type="button" class="btn btn-default btn-xs">
+			  <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+			</button>
+		</td>
+	</tr>
+</table>
+
+<nav>
+  <ul class="pagination">
+    <li>
+      <a href="#/ordonnateur" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li><a href="#/ordonnateur">1</a></li>
+    <li><a href="#/ordonnateur">2</a></li>
+    <li><a href="#/ordonnateur">3</a></li>
+    <li><a href="#/ordonnateur">4</a></li>
+    <li><a href="#/ordonnateur">5</a></li>
+    <li>
+      <a href="#/ordonnateur" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<div ng:include="'app/parametrage/ordonnateur/ordonnateur_nouveau.html'"></div>
+<div ng:include="'app/parametrage/ordonnateur/ordonnateur_modification.html'"></div>
+<div ng:include="'app/parametrage/ordonnateur/ordonnateur_recherche.html'"></div>
+<div ng:include="'app/parametrage/ordonnateur/ordonnateur_details.html'"></div>

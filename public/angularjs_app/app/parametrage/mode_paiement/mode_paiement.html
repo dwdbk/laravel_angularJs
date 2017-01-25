@@ -1,0 +1,87 @@
+<!-- page heading debut-->
+<div class="page-heading">
+	<ul class="breadcrumb">
+		<li>
+			<a >Parametrage</a>
+		</li>
+		<li class="active"> Mode de paiement </li>
+	</ul>
+</div>
+<!-- page heading end-->
+<div class="row">
+  <div class="col-md-4">
+		<button type="button" class="btn btn-danger">
+			<span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Supprimer
+		</button>
+  </div>
+  <div class="col-md-4">
+		<button type="button" class="btn btn-default" data-toggle="modal" data-target="#nouveauModal">
+			<span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Nouveau Mode de paiement
+		</button>
+  </div>
+  <div class="col-md-4">
+		<button type="button" class="btn btn-info" data-toggle="modal" data-target="#rechercheModal">
+			<span class="glyphicon glyphicon-search" aria-hidden="true"></span> Rechercher
+		</button>
+  </div>
+</div>
+<br />
+<table class="table table-bordered table-striped table-hover table-condensed">
+	<tr>
+		<th><input type="checkbox"></th>
+		<th>ID mode paiement</th>
+		<th>Mode paiement</th>
+		<th>Delais paiement</th>
+		<th>Détails</th>
+		<th>Modifier</th>
+		<th>Supprimer</th>
+	</tr>
+    <tr ng-repeat="mode in mode_paiement">
+		<td>
+			<input type="checkbox">
+		</td>
+		<td>{{mode.idMode_paiement}}</td>
+		<td>{{mode.mode_paiement}}</td>
+		<td>{{mode.delais_paiement}}</td>
+		<td>
+			<button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#detailsModal">
+			  <span class="glyphicon glyphicon-modal-window" aria-hidden="true"></span>
+			</button>
+		</td>
+		<td>
+			<button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#modificationModal">
+			  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+			</button>
+		</td>
+		<td>
+			<button type="button" class="btn btn-default btn-xs">
+			  <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+			</button>
+		</td>
+	</tr>
+</table>
+
+<nav>
+  <ul class="pagination">
+    <li>
+      <a href="#/mode_paiement" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li><a href="#/mode_paiement">1</a></li>
+    <li><a href="#/mode_paiement">2</a></li>
+    <li><a href="#/mode_paiement">3</a></li>
+    <li><a href="#/mode_paiement">4</a></li>
+    <li><a href="#/mode_paiement">5</a></li>
+    <li>
+      <a href="#/mode_paiement" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<div ng:include="'app/parametrage/mode_paiement/mode_paiement_nouveau.html'"></div>
+<div ng:include="'app/parametrage/mode_paiement/mode_paiement_modification.html'"></div>
+<div ng:include="'app/parametrage/mode_paiement/mode_paiement_recherche.html'"></div>
+<div ng:include="'app/parametrage/mode_paiement/mode_paiement_details.html'"></div>

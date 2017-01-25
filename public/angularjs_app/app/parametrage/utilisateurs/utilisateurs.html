@@ -1,0 +1,92 @@
+<!-- page heading debut-->
+<div class="page-heading">
+	<ul class="breadcrumb">
+		<li><a >Paramétrage</a></li>
+		<li class="active"> Opérateur </li>
+	</ul>
+</div>
+<!-- page heading end-->
+
+<div class="row">
+  <div class="col-md-4">
+		<button type="button" class="btn btn-danger">
+			<span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Supprimer
+		</button>
+  </div>
+  <div class="col-md-4">
+		<button type="button" class="btn btn-default" ng-click="newUser()" data-toggle="modal" data-target="#nouveauModal">
+			<span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Nouveau
+		</button>
+  </div>
+  <div class="col-md-4">
+		<button type="button" class="btn btn-info" data-toggle="modal" data-target="#rechercheModal">
+			<span class="glyphicon glyphicon-search" aria-hidden="true"></span> Rechercher
+		</button>
+  </div>
+</div>
+<br />
+<table class="table table-bordered table-striped table-hover table-condensed">
+	<tr>
+		<th><input type="checkbox"></th>
+		<th>Prénom</th>
+		<th>Nom</th>
+		<th>Abr</th>
+		<th>Tél</th>
+		<th>Login</th>
+		<th>Profil</th>
+		<th>Détails</th>
+		<th>Modifier</th>
+		<th>Supprimer</th>
+	</tr>
+    <tr ng-repeat="utilisateur in utilisateurs">
+		<td>
+			<input type="checkbox">
+		</td>
+		<td>{{utilisateur.firstname}}</td>
+		<td>{{utilisateur.lastname}}</td>
+		<td>{{utilisateur.abv}}</td>
+		<td>{{utilisateur.phone}}</td>
+		<td>{{utilisateur.login}}</td>
+		<td>{{utilisateur.profil.label}}</td>
+		<td>
+			<button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#detailsModal">
+			  <span class="glyphicon glyphicon-modal-window" aria-hidden="true"></span>
+			</button>
+		</td>
+		<td>
+			<button type="button" class="btn btn-default btn-xs" data-toggle="modal" data-target="#modificationModal">
+			  <span class="glyphicon glyphicon-edit" aria-hidden="true"></span>
+			</button>
+		</td>
+		<td>
+			<button type="button" class="btn btn-default btn-xs">
+			  <span class="glyphicon glyphicon-trash" aria-hidden="true"></span>
+			</button>
+		</td>
+	</tr>
+</table>
+
+<nav>
+  <ul class="pagination">
+    <li>
+      <a href="#/utilisateurs" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li><a href="#/utilisateurs">1</a></li>
+    <li><a href="#/utilisateurs">2</a></li>
+    <li><a href="#/utilisateurs">3</a></li>
+    <li><a href="#/utilisateurs">4</a></li>
+    <li><a href="#/utilisateurs">5</a></li>
+    <li>
+      <a href="#/utilisateurs" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+
+<div ng:include="'app/parametrage/utilisateurs/utilisateurs_nouveau.html'"></div>
+<div ng:include="'app/parametrage/utilisateurs/utilisateurs_modification.html'"></div>
+<div ng:include="'app/parametrage/utilisateurs/utilisateurs_recherche.html'"></div>
+<div ng:include="'app/parametrage/utilisateurs/utilisateurs_details.html'"></div>

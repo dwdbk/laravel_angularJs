@@ -1,0 +1,114 @@
+<!-- page heading debut-->
+<div class="page-heading">
+	<ul class="breadcrumb">
+		<li><a href="#/administration">Administration</a></li>
+		<li class="active"> Gestions d'habilitation </li>
+	</ul>
+</div>
+<!-- page heading end-->
+
+<div class="row">
+  <div class="col-md-4">
+		<button type="button" class="btn btn-danger">
+			<span class="glyphicon glyphicon-trash" aria-hidden="true"></span> Supprimer
+		</button>
+  </div>
+  <div class="col-md-4">
+		<button type="button" class="btn btn-default"  data-toggle="modal" data-target="#nouveauModal">
+			<span class="glyphicon glyphicon-plus-sign" aria-hidden="true"></span> Nouveau Profil utilisateur
+		</button>
+  </div>
+  <div class="col-md-4">
+		<button type="button" class="btn btn-info" data-toggle="modal" data-target="#modificationModal">
+			<span class="glyphicon glyphicon-edit" aria-hidden="true"></span> Modifer
+		</button>
+  </div>
+</div>
+<br />
+<div class="panel panel-default">
+	<div class="panel-body">
+		<div class="row">
+			<div class="form-group col-sm-8">
+				<label class="col-sm-4 control-label">Profil utilisateur</label>
+				<div class="col-sm-8">
+					<div class="input-group">
+						<select class="form-control" ng-model="profil" ng-options="profil.label for profil in profils">
+						</select>
+					</div>
+				</div>
+			</div>
+			<div class="form-group col-lg-4">
+				<button type="button" class="btn btn-info" data-toggle="modal" data-target="#rechercheModal">
+					<span class="glyphicon glyphicon-save" aria-hidden="true"></span> Attribuer les droits
+				</button>
+			</div>
+		</div>
+		<table class="table table-bordered table-striped table-hover table-condensed">
+			<tr>
+				<th>Rebrique</th>
+				<th>Lecture</th>
+				<th>Ecriture</th>
+				<th>Impression</th>
+				<th>Exportation</th>
+			</tr>
+			<tr ng-repeat="profil in profils">
+				<td class="text-danger">
+					{{profil.rubrique}}
+				</td>
+				<td>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" value="{{profil.read}}" >
+						</label>
+					</div>
+				</td>
+				<td>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" value="">
+						</label>
+					</div>
+				</td>
+				<td>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" value="">
+						</label>
+					</div>
+				</td>
+				<td>
+					<div class="checkbox">
+						<label>
+							<input type="checkbox" value="">
+						</label>
+					</div>
+				</td>
+			</tr>
+		</table>
+	</div>
+</div>
+
+
+<nav>
+  <ul class="pagination">
+    <li>
+      <a href="#/habilitations" aria-label="Previous">
+        <span aria-hidden="true">&laquo;</span>
+      </a>
+    </li>
+    <li><a href="#/habilitations">1</a></li>
+    <li><a href="#/habilitations">2</a></li>
+    <li><a href="#/habilitations">3</a></li>
+    <li><a href="#/habilitations">4</a></li>
+    <li><a href="#/habilitations">5</a></li>
+    <li>
+      <a href="#/habilitations" aria-label="Next">
+        <span aria-hidden="true">&raquo;</span>
+      </a>
+    </li>
+  </ul>
+</nav>
+<div ng:include="'app/administration/habilitations/habilitations_nouveau.html'"></div>
+<div ng:include="'app/administration/habilitations/habilitations_modification.html'"></div>
+<div ng:include="'app/administration/habilitations/habilitations_recherche.html'"></div>
+<div ng:include="'app/administration/habilitations/habilitations_details.html'"></div>
